@@ -1,18 +1,8 @@
 import React from "react";
 
 export default class CartItem extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      price: "899",
-      img: "",
-      qty: "1",
-      phone: "899",
-      title: "Mobile Phone",
-    };
-  }
 
-  oneFunction(value) {
+  // oneFunction(value) {
     // if (value === '+') {
     //   this.setState({
     //    qty:parseInt(this.state.qty)+(1),
@@ -28,10 +18,10 @@ export default class CartItem extends React.Component {
     // }
     // value === '+' ? this.setState({ qty :parseInt(this.state.qty)+1 }): this.setState({ qty :this.state.qty-1})
     
-    this.setState({
-        qty : (value==='+' ? parseInt(this.state.qty)+1 :(this.state.qty ===0 ? 0 :this.state.qty-1) ) 
-    })
-  }
+  //   this.setState({
+  //       qty : (value==='+' ? parseInt(this.state.qty)+1 :(this.state.qty ===0 ? 0 :this.state.qty-1) ) 
+  //   })
+  // }
 
 
   render() {
@@ -60,13 +50,13 @@ export default class CartItem extends React.Component {
                 src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png"
                 alt="increase"
                 className="action-icons"
-                onClick={() => this.oneFunction("+")}
+                onClick={() => this.props.onIncreaseQuantity(this.props.product)}
               />
               <img
                 src="https://cdn-icons-png.flaticon.com/512/56/56889.png"
                 alt="decrease"
                 className="action-icons"
-                onClick={() => this.oneFunction("-")}
+                onClick={() => this.props.onDecreaseQuantity(this.props.product)}
               />
               <img
                 src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
