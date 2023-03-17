@@ -26,13 +26,13 @@ export default class CartItem extends React.Component {
 
   render() {
     console.log(this.props)
-    const { qty, price, title } = this.props.product;
+    const { qty, price, title ,img} = this.props.product;
     return (
       <>
         <div className="cart-item">
           <div className="left-block">
             {/* eslint-disable-next-line */}
-            <img style={styles.img} />
+            <img style={styles.img} src={img} />
           </div>
 
           <div className="right-block">
