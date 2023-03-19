@@ -25,8 +25,9 @@ export default class CartItem extends React.Component {
 
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     const { qty, price, title ,img} = this.props.product;
+    const { product } = this.props;
     return (
       <>
         <div className="cart-item">
@@ -62,7 +63,7 @@ export default class CartItem extends React.Component {
                 src="https://cdn-icons-png.flaticon.com/512/1214/1214428.png"
                 alt="delete"
                 className="action-icons"
-                onClick={()=> this.props.onDeleteCart(this.props.product.id)}
+                onClick={() => this.props.onDeleteProduct(product.id)}
               />
             </div>
           </div>
@@ -74,10 +75,9 @@ export default class CartItem extends React.Component {
 
 const styles = {
   img: {
-    height: "200px",
-    width: "300px",
+    height: "100px",
+    width: "100px",
     background: "#ccc",
-    border: "2px solid black",
     borderRadius: "4px",
   },
 };
